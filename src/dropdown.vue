@@ -116,11 +116,13 @@
                 } else {
                     this.checkedList.push(key)
                 }
+                this.onChecked(this.checkedList, this.prop)
             },
             handleSelectAll(isAll) {
                 // notice: When select all, we need to slice the filtedList for backup the list.
                 // if not, when you update checkedList(remove item from the checked list, the filted list will also remove the item => boom bug)
                 this.checkedList = isAll ? this.filtedKeyList.slice(0) : []
+                this.onChecked(this.checkedList, this.prop)
             },
         },
         components: {
