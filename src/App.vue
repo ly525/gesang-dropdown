@@ -2,6 +2,7 @@
   <div id="app">
     <gesang-dropdown
         prop="city"
+        title-suffix="new prop"
         :init-checked-list="initCheckedList"
         :full-list="fullList"
         :full-key-value-map="fullMap"

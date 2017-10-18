@@ -51,6 +51,9 @@
             titlePrefix: {
                 default: 'Has selected',
             },
+            titleSuffix: {
+                default: '',
+            },
             initCheckedList: {
                 type: Array,
                 default() {
@@ -84,7 +87,7 @@
         },
         computed: {
             title() {
-                return `${this.titlePrefix} ${this.checkedList.length} ${this.prop}`
+                return `${this.titlePrefix} ${this.checkedList.length} ${this.titleSuffix || this.prop}`
             },
             placeholder() {
                 return `Select ${this.prop}`
