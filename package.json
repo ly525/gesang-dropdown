@@ -1,7 +1,7 @@
 {
-  "name": "iview-dropdown-enhance",
-  "version": "1.0.0",
-  "description": "better iview select component for multi select",
+  "name": "gesang-dropdown",
+  "version": "0.0.1",
+  "description": "a better vue select component for multi select based on iView",
   "author": "lantern.done@gmail.com",
   "private": false,
   "scripts": {
@@ -97,6 +97,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ly525/iview-dropdown-enhance.git"
+    "url": "git+https://github.com/ly525/gesang-dropdown.git"
   }
 }
