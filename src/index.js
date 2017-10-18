@@ -1,2 +1,2 @@
-import gesangDropdown from './dropdown.vue'
-export default gesangDropdown
+import GesangDropdown from './dropdown.vue'
+export default GesangDropdown

@@ -27,7 +27,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     // filename: utils.assetsPath('js/[name].[chunkhash].js'),
     // chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
     filename: utils.assetsPath('gesang-dropdown.js'),
-    chunkFilename: utils.assetsPath('gesang-dropdown.js')
+    chunkFilename: utils.assetsPath('gesang-dropdown.js'),
+    library: 'GesangDropdown',
+    libraryTarget: 'umd'
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html

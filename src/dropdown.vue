@@ -41,6 +41,7 @@
     import iIcon from 'iview/src/components/icon'
     // import iInput from 'iview/src/components/input'
     export default {
+        name: 'GesangDropdown',
         props: {
             prop: {
                 default: '',
@@ -140,6 +141,7 @@
     }
 
     div.gesang-dropdown-content {
+        position: relative;
         overflow-y: scroll;
 
         .gesang-dropdown-input {
@@ -162,7 +164,7 @@
             }
         }
         .gesang-dropdown-content-header {
-            position: fixed;
+            position: absolute;
             z-index: 9;
 
             .gesang-dropdown-search {
