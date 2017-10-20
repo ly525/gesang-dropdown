@@ -31,6 +31,11 @@ var webpackConfig = merge(baseWebpackConfig, {
     library: 'GesangDropdown',
     libraryTarget: 'umd'
   },
+  // https://vuejsdevelopers.com/2017/07/31/vue-component-publish-npm/
+  externals: {
+    vue: 'vue',
+    iview: 'iview',
+  },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
