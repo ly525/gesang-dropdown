@@ -11,4 +11,5 @@
     "main": "dist/gesang-dropdown.js"
     ```
 
-4. add  `src/index.js` to entry in `webpack.production.js` and export component in `src/index.js` to build dist folder
+3. add  `src/index.js` to entry in `webpack.production.js` and export component in `src/index.js` to build dist folder
+4. fix `@on-checked` to `:on-checked`
