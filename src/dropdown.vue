@@ -94,7 +94,13 @@
                 return `Select ${this.prop}`
             },
             filtedKeyList() {
-                return !this.filtedValue ? this.fullList : this.fullList.filter(item => this.fullKeyValueMap['' + item].includes(this.filtedValue))
+                return !this.filtedValue ? this.fullList : this.fullList.filter(item => {
+                    if (this.isMap) {
+                        return this.fullKeyValueMap['' + item].includes(this.filtedValue)
+                    } else {
+                        return ('' + item).includes(this.filtedValue)
+                    }
+                })
             },
             isMap() {
                 return this.type === 'map'
