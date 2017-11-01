@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GesangDropdown Test</title>
+    <!-- 引入Vue -->
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <link rel="stylesheet" href="../dist/gesang-dropdown.css">
+    <!-- 引入组件库 -->
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="../dist/gesang-dropdown.js"></script>
+</head>
+<body>
+    <div id="app">
+        <gesang-dropdown
+            prop="city"
+            title-suffix="new prop"
+            :init-checked-list="initCheckedList"
+            :full-list="fullList"
+            :full-key-value-map="fullMap"
+            :on-checked="handleChecked">
+        </gesang-dropdown>
+    </div>
+    <script>
+        var Main = {
+            data () {
+                return {
+                    initCheckedList: [1, 2, 3],
+                    fullList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17],
+                    fullMap: {
+                        1: 'a',
+                        2: 'abc',
+                        3: 'abcd',
+                        4: 'abcd',
+                        5: 'abcde',
+                        6: 'abcdef',
+                        7: 'abcdefg',
+                        8: 'abcdefgh',
+                        9: 'abcdefghi',
+                        10: 'abcdefghik',
+                        11: 'abcdefghikl',
+                        12: 'abcdefghiklm',
+                        13: 'abcdefghiklmn',
+                        14: 'abcdefghiklmno',
+                        15: 'abcdefghiklmnop',
+                        16: 'abcdefghiklmnopq',
+                        17: 'longlonglonglonglonglonglonglonglonglonglong',
+                    },
+                }
+            },
+            methods: {
+                handleChecked(items, prop) {
+                    console.log('App.vue')
+                    console.log(items)
+                    console.log(prop)
+                },
+            }
+        }
+        var Component = Vue.extend(Main)
+        new Component().$mount('#app')
+      </script>
+</body>
+</html>

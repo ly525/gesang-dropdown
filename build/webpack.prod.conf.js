@@ -29,11 +29,18 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('gesang-dropdown.js'),
     chunkFilename: utils.assetsPath('gesang-dropdown.js'),
     library: 'GesangDropdown',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
   },
   // https://vuejsdevelopers.com/2017/07/31/vue-component-publish-npm/
   externals: {
-    vue: 'vue',
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    },
+
     iview: 'iview',
   },
   plugins: [
@@ -53,50 +60,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       // filename: utils.assetsPath('css/[name].[contenthash].css')
       filename: utils.assetsPath('gesang-dropdown.css')
     }),
-    // 压缩提取出来的 css
-    // 可以删除来自不同组件的冗余代码
-    // Compress extracted CSS. We are using this plugin so that possible
-    // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin(),
-    // 分割公共 js 到独立的文件
-    // split vendor js into its own file
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   minChunks: function (module, count) {
-    //     // node_modules中的任何所需模块都提取到vendor
-    //     // any required modules inside node_modules are extracted to vendor
-    //     return (
-    //       module.resource &&
-    //       /\.js$/.test(module.resource) &&
-    //       module.resource.indexOf(
-    //         path.join(__dirname, '../node_modules')
-    //       ) === 0
-    //     )
-    //   }
-    // }),
-    // 将webpack runtime 和模块清单 提取到独立的文件，以防止当 app包更新时导致公共 jsd hash也更新
-    // extract webpack runtime and module manifest to its own file in order to
-    // prevent vendor hash from being updated whenever app bundle is updated
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'manifest',
-    //   chunks: ['vendor']
-    // }),
-    // copy custom static assets
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, '../static'),
-    //     to: config.build.assetsSubDirectory,
-    //     ignore: ['.*']
-    //   }
-    // ]),
-    // copy django templates
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, '../../common'),
-    //     to: config.build.assetsRoot,
-    //     ignore: ['.*']
-    //   }
-    // ])
   ]
 })
 
