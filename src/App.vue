@@ -6,7 +6,11 @@
         :init-checked-list="initCheckedList"
         :full-list="fullList"
         :full-key-value-map="fullMap"
-        :on-checked="handleChecked">
+        :on-checked="handleChecked"
+        :content-width="300"
+        :name-ratio="4"
+        :checkbox-ratio="1"
+        >
     </gesang-dropdown>
   </div>
 </template>

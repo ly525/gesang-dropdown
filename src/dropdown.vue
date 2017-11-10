@@ -1,6 +1,6 @@
 <template>
-    <i-poptip trigger="click" placement="bottom" class="custom-poptip" width="200">
-        <i-button type="ghost">
+    <i-poptip trigger="click" placement="bottom" class="custom-poptip" :width="contentWidth">
+        <i-button type="ghost" style="width:100%;">
             <span class="gesang-dropdown-title">{{title}}</span>
             <i-icon type="arrow-down-b"></i-icon>
         </i-button>
@@ -19,11 +19,11 @@
                     <li v-for="(key, index) in filtedKeyList" :key="index" style="cursor: pointer;"
                         @click="updatecheckedList(key)">
                         <div class="gesang-dropdown-item-wrapper">
-                            <div class="gesang-dropdown-item-name"
+                            <div class="gesang-dropdown-item-name" :style="{flex: nameRatio}" 
                                  v-html="isMap ? fullKeyValueMap[key].replace(filtedValue, markToken): ('' + key).replace(filtedValue, markToken)"
                                  :title="isMap ? fullKeyValueMap[key]: key">
                             </div>
-                            <div class="gesang-dropdown-item-checkbox">
+                            <div class="gesang-dropdown-item-checkbox" :style="{flex: checkboxRatio}">
                                 <input type="checkbox" :value="key" v-model="checkedList">
                                 <label :for="key"></label>
                             </div>
@@ -78,6 +78,18 @@
                 default() {
                     return {}
                 },
+            },
+            contentWidth: {
+                type: Number,
+                default: 200,
+            },
+            nameRatio: {
+                type: [Number, String],
+                default: 2,
+            },
+            checkboxRatio: {
+                type: [Number, String],
+                default: 1,
             },
         },
         data() {
@@ -173,8 +185,17 @@
             position: absolute;
             z-index: 9;
 
+            width: 75%;
+
             .gesang-dropdown-search {
                 margin-bottom: 5px;
+
+            }
+
+            .gesang-dropdown-shortcut {
+                button {
+                    width: 50%;
+                }
             }
         }
         .gesang-dropdown-content-list {
@@ -261,4 +282,5 @@
             width: 100%;
         }
     }
+
 </style>
