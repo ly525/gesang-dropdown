@@ -5,7 +5,7 @@
             <i-icon type="arrow-down-b"></i-icon>
         </i-button>
         <div slot="content" class="gesang-dropdown-content">
-            <div class="gesang-dropdown-content-header">
+            <div class="gesang-dropdown-content-header" :style="{width:headerWidthPercent+'%'}">
                 <div class="gesang-dropdown-search">
                     <input v-model="filtedValue" class="gesang-dropdown-input" placeholder="Search..." autofocus/>
                 </div>
@@ -91,6 +91,9 @@
                 type: [Number, String],
                 default: 1,
             },
+            headerWidthPercent: {
+                default: 75
+            }
         },
         data() {
             return {
